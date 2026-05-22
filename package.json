@@ -1,0 +1,25 @@
+{
+  "name": "eventhive",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Root scripts for EventHive client and server",
+  "scripts": {
+    "install:server": "cd server && npm install --legacy-peer-deps",
+    "install:client": "cd client && npm install",
+    "install:all": "concurrently -n server,client -c blue,green \"npm run install:server\" \"npm run install:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "start:server": "npm --prefix server run start",
+    "start:client": "npm --prefix client run preview",
+    "start": "concurrently -n server,client -c blue,green \"npm run start:server\" \"npm run start:client\"",
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "setup": "npm run install:all",
+    "dev:all": "npm run install:all && npm run dev",
+    "start:all": "npm run install:all && npm run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
