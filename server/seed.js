@@ -22,64 +22,104 @@ const users = [
 
 const events = [
     {
-        title: 'React & Node.js Developer Retreat',
-        description: 'Join us for a 3-day deep dive into modern full-stack web development. Perfect for developers looking to take their skills to the next level.',
-        date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // 10 days from now
-        location: 'Silicon Valley Innovation Center, CA',
-        category: 'Technology',
-        totalSeats: 200,
-        ticketPrice: 0,
-        image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'
-    },
-    {
         title: 'Neon Nights EDM Festival',
-        description: 'Experience an unforgettable night of EDM, techno, and dazzling light shows with top DJs from around the globe.',
-        date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000), // 20 days from now
-        location: 'Grand Arena, New York',
+        description: 'An electrifying night featuring top DJs, laser shows, and immersive stage experiences.',
+        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+        location: 'Mumbai, Maharashtra',
         category: 'Music',
-        totalSeats: 500,
-        ticketPrice: 1500,
-        image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800'
+        totalSeats: 5000,
+        ticketPrice: 1999,
+        image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819'
     },
     {
-        title: 'Global Leaders Business Summit',
-        description: 'A premium gathering of CEOs, founders, and investors discussing the future of global commerce and AI integration.',
-        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days from now
-        location: 'The Ritz-Carlton, London',
-        category: 'Business',
-        totalSeats: 150,
-        ticketPrice: 5000,
-        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800'
+        title: 'Arijit Singh Live Concert',
+        description: 'Experience a magical evening of live music and unforgettable performances.',
+        date: new Date(Date.now() + 22 * 24 * 60 * 60 * 1000),
+        location: 'Kolkata, West Bengal',
+        category: 'Concert',
+        totalSeats: 12000,
+        ticketPrice: 2999,
+        image: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a'
     },
     {
-        title: 'Modern Art Expo 2024',
-        description: 'Discover breathtaking contemporary and modern arts from underground and trending artists this season.',
-        date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 5 days from now
-        location: 'Downtown Art Museum',
-        category: 'Art',
-        totalSeats: 300,
-        ticketPrice: 200,
-        image: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-        title: 'Startup Pitch & Pitch Competition',
-        description: 'Watch 25 startups pitch for 1 million dollars in seed funding. Great networking for entrepreneurs and angel investors.',
-        date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
-        location: 'Convention Center, Miami',
-        category: 'Business',
-        totalSeats: 250,
-        ticketPrice: 100,
-        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-        title: 'Cloud Computing Architecture Seminar',
-        description: 'A purely technical breakdown of scalable cloud solutions, multi-region routing, and serverless compute processing.',
-        date: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000), // 12 days from now
-        location: 'Tech Hub, Seattle',
+        title: 'React & AI Developer Meetup',
+        description: 'Connect with developers, learn modern React patterns, AI integrations, and network with industry professionals.',
+        date: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000),
+        location: 'Bangalore, Karnataka',
         category: 'Technology',
-        totalSeats: 100,
-        ticketPrice: 600,
-        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
+        totalSeats: 300,
+        ticketPrice: 0,
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3'
+    },
+    {
+        title: 'National Hackathon 2026',
+        description: 'Build innovative solutions, compete for prizes, and collaborate with talented developers.',
+        date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        location: 'Hyderabad, Telangana',
+        category: 'Hackathon',
+        totalSeats: 1000,
+        ticketPrice: 499,
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d'
+    },
+    {
+        title: 'Startup Pitch & Investor Summit',
+        description: 'Meet founders, investors, and emerging startups shaping the future.',
+        date: new Date(Date.now() + 18 * 24 * 60 * 60 * 1000),
+        location: 'Delhi NCR',
+        category: 'Business',
+        totalSeats: 500,
+        ticketPrice: 999,
+        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7'
+    },
+    {
+        title: 'Annual Cultural Fest - Udaan',
+        description: 'Dance battles, music performances, fashion shows, and exciting competitions.',
+        date: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000),
+        location: 'Ranchi, Jharkhand',
+        category: 'Cultural',
+        totalSeats: 3000,
+        ticketPrice: 199,
+        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f'
+    },
+    {
+        title: 'NSS Blood Donation Camp',
+        description: 'Donate blood and contribute towards saving lives. Open to all participants.',
+        date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+        location: 'Jamshedpur, Jharkhand',
+        category: 'Social',
+        totalSeats: 500,
+        ticketPrice: 0,
+        image: 'https://images.unsplash.com/photo-1615461066841-6116e61058f4'
+    },
+    {
+        title: 'Street Food Carnival',
+        description: 'Taste cuisines from across India with live music and entertainment.',
+        date: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000),
+        location: 'Pune, Maharashtra',
+        category: 'Food',
+        totalSeats: 2500,
+        ticketPrice: 149,
+        image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1'
+    },
+    {
+        title: 'Stand-Up Comedy Night',
+        description: 'An evening packed with laughter featuring top comedians and rising stars.',
+        date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000),
+        location: 'Chennai, Tamil Nadu',
+        category: 'Entertainment',
+        totalSeats: 800,
+        ticketPrice: 599,
+        image: 'https://images.unsplash.com/photo-1527224857830-43a7acc85260'
+    },
+    {
+        title: 'Inter-City Marathon 2026',
+        description: 'Run alongside thousands of participants in one of the biggest fitness events of the year.',
+        date: new Date(Date.now() + 40 * 24 * 60 * 60 * 1000),
+        location: 'Bhubaneswar, Odisha',
+        category: 'Sports',
+        totalSeats: 5000,
+        ticketPrice: 299,
+        image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5'
     }
 ];
 
