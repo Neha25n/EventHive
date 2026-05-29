@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
+import BrandLogo from '../components/BrandLogo';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -35,43 +36,47 @@ const Register = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-16 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+        <div className="max-w-md mx-auto mt-12 bg-white p-8 sm:p-9 rounded-2xl shadow-xl border border-gray-100">
             <div className="text-center mb-8">
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Create an Account</h2>
-                <p className="text-gray-500">Join EventHive today</p>
+                <div className="flex justify-center mb-6">
+                    <BrandLogo variant="dark" size="md" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-widest text-amber-600">Start your journey</span>
+                <h2 className="text-3xl font-black text-gray-950 mt-2 mb-2">Create your account</h2>
+                <p className="text-gray-500">Join EventHive and keep every booking in one place.</p>
             </div>
 
-            {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-6 text-center shadow-inner border border-red-100">{error}</div>}
+            {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-6 text-center border border-red-100">{error}</div>}
 
             <form onSubmit={handleSubmit} className="space-y-5">
                 {!showOTP ? (
                     <>
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
                             <input
                                 type="text"
                                 required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 transition shadow-sm"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-300 focus:border-gray-900 outline-none transition"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
                             <input
                                 type="email"
                                 required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 transition shadow-sm"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-300 focus:border-gray-900 outline-none transition"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Password</label>
                             <input
                                 type="password"
                                 required
-                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 transition shadow-sm"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-300 focus:border-gray-900 outline-none transition"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -79,15 +84,15 @@ const Register = () => {
                     </>
                 ) : (
                     <div>
-                        <p className="text-sm text-green-700 bg-green-50 p-3 mb-4 rounded border border-green-200">
+                        <p className="text-sm text-green-700 bg-green-50 p-3 mb-4 rounded-lg border border-green-200">
                             An OTP has been sent to your email. Please verify your account.
                         </p>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Verification Code (OTP)</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Verification Code (OTP)</label>
                         <input
                             type="text"
                             required
                             placeholder="6-digit code"
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-700 transition shadow-sm font-bold tracking-widest text-center text-lg"
+                            className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-300 focus:border-gray-900 outline-none transition font-bold tracking-widest text-center text-lg"
                             value={otp}
                             onChange={(e) => setOtp(e.target.value)}
                             maxLength="6"
@@ -98,7 +103,7 @@ const Register = () => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-200 transition shadow-md mt-4"
+                    className="w-full bg-gray-950 text-white font-bold py-3.5 rounded-lg hover:bg-black focus:ring-4 focus:ring-amber-100 transition shadow-md disabled:opacity-70 mt-4"
                 >
                     {loading ? 'Processing...' : (showOTP ? 'Verify & Complete' : 'Sign Up')}
                 </button>
@@ -106,7 +111,7 @@ const Register = () => {
 
             {!showOTP && (
                 <p className="text-center mt-6 text-gray-600">
-                    Already have an account? <Link to="/login" className="text-gray-900 font-bold hover:underline">Sign in</Link>
+                    Already have an account? <Link to="/login" className="text-gray-950 font-black hover:text-amber-600 transition">Sign in</Link>
                 </p>
             )}
         </div>
